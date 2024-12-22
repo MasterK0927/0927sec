@@ -13,7 +13,7 @@ tags:
 
 Browser security isn't just about implementing new algorithms – it's about rethinking our entire security architecture from the ground up.
 
-![[Pasted image 20241222163152.png]]
+!![Image Description](/images/Pasted%20image%2020241222163152.png)
 ### Modern Browser Security
 
 Today's browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor's algorithm running on a sufficiently powerful quantum computer.
@@ -23,12 +23,12 @@ Today's browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryp
 
 The network security layer handles TLS connections and certificate validation. This layer must be completely redesigned to handle post-quantum algorithms. Current implementations in Chrome and Firefox use OpenSSL or BoringSSL, which are being updated to support post-quantum algorithms [1].
 
-![[Pasted image 20241222163250.png]]
+!![Image Description](/images/Pasted%20image%2020241222163250.png)
 
 Key components requiring quantum resistance:
 
 - **Transport Layer Security (TLS):** Modifications to the TLS handshake are necessary to support larger key sizes and new algorithms. CRYSTALS-Kyber, selected by NIST for standardization, introduces significant changes [2]:
-    ![[Pasted image 20241222163526.png]]
+    !![Image Description](/images/Pasted%20image%2020241222163526.png)
     
 	- Larger public keys (Kyber-768 uses 1184 bytes compared to X25519's 32 bytes)
     - Different error-handling mechanisms for decapsulation failures
@@ -48,7 +48,7 @@ Key areas requiring updates:
 
 - **Memory Management:** Post-quantum cryptography demands significantly more memory:
 
-    ![[Pasted image 20241222163712.png]]
+    !![Image Description](/images/Pasted%20image%2020241222163712.png)
     
 	- SPHINCS+ signatures can be up to 49KB, compared to 64 bytes for Ed25519
     - Dilithium signatures require around 2.7KB, compared to 64 bytes for Ed25519
@@ -111,6 +111,8 @@ Chrome uses a hybrid post-quantum key exchange, combining traditional and quantu
 #### Certificate Processing
 
 Chrome supports hybrid certificates as specified in draft-ietf-tls-hybrid-certificates [8]. Key enhancements include:
+
+![[Pasted image 20241222164838.png]]
 
 - Parallel validation paths for classical and quantum signatures
 - Improved memory management for larger certificates

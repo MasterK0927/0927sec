@@ -7,8 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The Quantum Challenge Browser security isn&amp;rsquo;t just about implementing new algorithms – it&amp;rsquo;s about rethinking our entire security architecture from the ground up.
-![[Pasted image 20241222163152.png]]
-Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&amp;rsquo;s algorithm running on a sufficiently powerful quantum computer." />
+!Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&amp;rsquo;s algorithm running on a sufficiently powerful quantum computer." />
 <meta name="keywords" content="" />
 
   <meta name="robots" content="noodp" />
@@ -84,8 +83,7 @@ Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 p
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Securing Browsers in Post Quantum era">
 <meta property="og:description" content="The Quantum Challenge Browser security isn&amp;rsquo;t just about implementing new algorithms – it&amp;rsquo;s about rethinking our entire security architecture from the ground up.
-![[Pasted image 20241222163152.png]]
-Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&amp;rsquo;s algorithm running on a sufficiently powerful quantum computer." />
+!Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&amp;rsquo;s algorithm running on a sufficiently powerful quantum computer." />
 <meta property="og:url" content="/posts/post-quantum-cryptography/" />
 <meta property="og:site_name" content="Terminal" />
 
@@ -199,18 +197,18 @@ Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 p
   <div class="post-content"><div>
         <h2 id="the-quantum-challenge">The Quantum Challenge<a href="#the-quantum-challenge" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Browser security isn&rsquo;t just about implementing new algorithms – it&rsquo;s about rethinking our entire security architecture from the ground up.</p>
-<p>![[Pasted image 20241222163152.png]]</p>
+<p>!<img src="/images/Pasted%20image%2020241222163152.png" alt="Image Description"></p>
 <h3 id="modern-browser-security">Modern Browser Security<a href="#modern-browser-security" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Today&rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&rsquo;s algorithm running on a sufficiently powerful quantum computer.</p>
 <h3 id="browsers-cryptographic-architecture">Browser&rsquo;s Cryptographic Architecture<a href="#browsers-cryptographic-architecture" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <h4 id="network-security-layer">Network Security Layer<a href="#network-security-layer" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <p>The network security layer handles TLS connections and certificate validation. This layer must be completely redesigned to handle post-quantum algorithms. Current implementations in Chrome and Firefox use OpenSSL or BoringSSL, which are being updated to support post-quantum algorithms [1].</p>
-<p>![[Pasted image 20241222163250.png]]</p>
+<p>!<img src="/images/Pasted%20image%2020241222163250.png" alt="Image Description"></p>
 <p>Key components requiring quantum resistance:</p>
 <ul>
 <li>
 <p><strong>Transport Layer Security (TLS):</strong> Modifications to the TLS handshake are necessary to support larger key sizes and new algorithms. CRYSTALS-Kyber, selected by NIST for standardization, introduces significant changes [2]:
-![[Pasted image 20241222163526.png]]</p>
+!<img src="/images/Pasted%20image%2020241222163526.png" alt="Image Description"></p>
 <ul>
 <li>Larger public keys (Kyber-768 uses 1184 bytes compared to X25519&rsquo;s 32 bytes)</li>
 <li>Different error-handling mechanisms for decapsulation failures</li>
@@ -232,7 +230,7 @@ Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 p
 <ul>
 <li>
 <p><strong>Memory Management:</strong> Post-quantum cryptography demands significantly more memory:</p>
-<p>![[Pasted image 20241222163712.png]]</p>
+<p>!<img src="/images/Pasted%20image%2020241222163712.png" alt="Image Description"></p>
 <ul>
 <li>SPHINCS+ signatures can be up to 49KB, compared to 64 bytes for Ed25519</li>
 <li>Dilithium signatures require around 2.7KB, compared to 64 bytes for Ed25519</li>
@@ -287,6 +285,7 @@ Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 p
 </ul>
 <h4 id="certificate-processing">Certificate Processing<a href="#certificate-processing" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <p>Chrome supports hybrid certificates as specified in draft-ietf-tls-hybrid-certificates [8]. Key enhancements include:</p>
+<p>![[Pasted image 20241222164838.png]]</p>
 <ul>
 <li>Parallel validation paths for classical and quantum signatures</li>
 <li>Improved memory management for larger certificates</li>
