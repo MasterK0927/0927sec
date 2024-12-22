@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Terminal</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on Terminal</description>
+    <title>Quantum Safe on Terminal</title>
+    <link>/tags/quantum-safe/</link>
+    <description>Recent content in Quantum Safe on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/quantum-safe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Securing Browsers in Post Quantum era</title>
       <link>/posts/post-quantum-cryptography/</link>

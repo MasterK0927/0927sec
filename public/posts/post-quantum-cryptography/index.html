@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Securing Browsers in Post Quantum era :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Quantum Challenge Browser security isn&amp;rsquo;t just about implementing new algorithms – it&amp;rsquo;s about rethinking our entire security architecture from the ground up.
+Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&amp;rsquo;s algorithm running on a sufficiently powerful quantum computer." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/post-quantum-cryptography/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.4b367d85d0d0061435650561285afed36c46a7cf8dc6d7ed5642d98e589fa622.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Securing Browsers in Post Quantum era">
+<meta property="og:description" content="The Quantum Challenge Browser security isn&amp;rsquo;t just about implementing new algorithms – it&amp;rsquo;s about rethinking our entire security architecture from the ground up.
+Modern Browser Security Today&amp;rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&amp;rsquo;s algorithm running on a sufficiently powerful quantum computer." />
+<meta property="og:url" content="/posts/post-quantum-cryptography/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-12-22 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/post-quantum-cryptography/">Securing Browsers in Post Quantum era</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-12-22</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/browsers/">Browsers</a>&nbsp;
+      
+      #<a href="/tags/cryptography/">Cryptography</a>&nbsp;
+      
+      #<a href="/tags/quantum-computer/">Quantum Computer</a>&nbsp;
+      
+      #<a href="/tags/quantum-safe/">Quantum Safe</a>&nbsp;
+      
+      #<a href="/tags/safe-infra/">Safe Infra</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="the-quantum-challenge">The Quantum Challenge<a href="#the-quantum-challenge" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Browser security isn&rsquo;t just about implementing new algorithms – it&rsquo;s about rethinking our entire security architecture from the ground up.</p>
+<h3 id="modern-browser-security">Modern Browser Security<a href="#modern-browser-security" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Today&rsquo;s browsers rely heavily on the TLS 1.3 protocol, using elliptic curve cryptography (ECC) for key exchanges and RSA/ECDSA for digital signatures. These mechanisms have served us well, but they share a common vulnerability: susceptibility to Shor&rsquo;s algorithm running on a sufficiently powerful quantum computer.</p>
+<h3 id="browsers-cryptographic-architecture">Browser&rsquo;s Cryptographic Architecture<a href="#browsers-cryptographic-architecture" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h4 id="network-security-layer">Network Security Layer<a href="#network-security-layer" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>The network security layer handles TLS connections and certificate validation. This layer must be completely redesigned to handle post-quantum algorithms. Current implementations in Chrome and Firefox use OpenSSL or BoringSSL, which are being updated to support post-quantum algorithms [1].</p>
+<p>Key components requiring quantum resistance:</p>
+<ul>
+<li>
+<p><strong>Transport Layer Security (TLS):</strong> Modifications to the TLS handshake are necessary to support larger key sizes and new algorithms. CRYSTALS-Kyber, selected by NIST for standardization, introduces significant changes [2]:</p>
+<ul>
+<li>Larger public keys (Kyber-768 uses 1184 bytes compared to X25519&rsquo;s 32 bytes)</li>
+<li>Different error-handling mechanisms for decapsulation failures</li>
+<li>New key derivation functions optimized for post-quantum security</li>
+</ul>
+</li>
+<li>
+<p><strong>Certificate Processing:</strong> The X.509 certificate infrastructure faces challenges such as:</p>
+<ul>
+<li>Insufficient maximum certificate sizes for post-quantum signatures</li>
+<li>Longer certificate chains due to larger signatures</li>
+<li>Increased validation times with post-quantum algorithms</li>
+</ul>
+</li>
+</ul>
+<h4 id="client-side-cryptographic-operations">Client-Side Cryptographic Operations<a href="#client-side-cryptographic-operations" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Browser-based cryptographic operations present unique challenges. The Web Crypto API, providing cryptographic functionality to web applications, must support post-quantum algorithms while maintaining backward compatibility [3].</p>
+<p>Key areas requiring updates:</p>
+<ul>
+<li>
+<p><strong>Memory Management:</strong> Post-quantum cryptography demands significantly more memory:</p>
+<ul>
+<li>SPHINCS+ signatures can be up to 49KB, compared to 64 bytes for Ed25519</li>
+<li>Dilithium signatures require around 2.7KB, compared to 64 bytes for Ed25519</li>
+<li>Key generation necessitates larger entropy pools and secure random number generation</li>
+</ul>
+</li>
+<li>
+<p><strong>Processing Architecture:</strong> Increased computational requirements necessitate new strategies:</p>
+<ul>
+<li>Parallel processing of hybrid cryptographic operations</li>
+<li>WebAssembly implementation for performance-critical operations</li>
+<li>Optimized memory allocation for large keys and signatures</li>
+</ul>
+</li>
+</ul>
+<h3 id="understanding-the-attack-surface">Understanding the Attack Surface<a href="#understanding-the-attack-surface" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>The quantum vulnerability in browsers extends beyond the obvious TLS connection. Browser security, a layered construct, is threatened at every level by quantum computing.</p>
+<p>At the foundational layer, TLS protocol implementations using ECC and RSA/ECDSA are vulnerable to Shor&rsquo;s algorithm [2]. Experts estimate that a quantum computer with several thousand logical qubits could compromise current cryptographic systems [3].</p>
+<p>At the certificate processing level, the X.509 infrastructure faces fundamental incompatibility with quantum-resistant algorithms due to size constraints and processing requirements. Secure validation of certificate chains requires quantum-resistant signature verifications throughout.</p>
+<h3 id="the-complexities-of-browser-storage">The Complexities of Browser Storage<a href="#the-complexities-of-browser-storage" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Client-side storage, often overlooked, relies on cryptographic primitives needing quantum resistance. IndexedDB, localStorage, and password managers face challenges such as:</p>
+<ul>
+<li>Deriving encryption keys quickly for smooth user experiences</li>
+<li>Maintaining secure auto-fill without exposing credentials to quantum attacks</li>
+<li>Synchronizing data using quantum-resistant transport mechanisms</li>
+<li>Ensuring backward compatibility with existing websites</li>
+</ul>
+<h3 id="building-a-quantum-resistant-browser-architecture">Building a Quantum-Resistant Browser Architecture<a href="#building-a-quantum-resistant-browser-architecture" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Addressing these challenges requires a transitional architecture supporting both classical and post-quantum cryptography. This hybrid approach ensures compatibility with existing web infrastructure while introducing quantum resistance incrementally.</p>
+<p>The hybrid cryptographic layer performs parallel key exchanges using classical and post-quantum algorithms, combining results via domain separation techniques. This strategy adds overhead but is essential for a secure transition.</p>
+<h3 id="the-performance-challenge">The Performance Challenge<a href="#the-performance-challenge" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Post-quantum algorithms, with their larger keys and signatures, significantly impact browser performance. Effective resource management across hundreds of concurrent connections is critical. Strategies include:</p>
+<ul>
+<li>Managing larger keys and signatures without exhausting memory</li>
+<li>Efficient caching of cryptographic operations</li>
+<li>Smart scheduling of verification tasks</li>
+<li>Leveraging hardware acceleration</li>
+</ul>
+<h3 id="practical-implementation-strategies">Practical Implementation Strategies<a href="#practical-implementation-strategies" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>A phased approach is necessary for deploying quantum-resistant browsers:</p>
+<ol>
+<li>Implement hybrid key exchange mechanisms in the TLS stack for immediate quantum resistance while maintaining compatibility.</li>
+<li>Update certificate chain processing to support hybrid certificates incrementally.</li>
+<li>Enhance the browser storage security layer with quantum-resistant wrapped keys, enabling smooth transitions without immediate data migration.</li>
+</ol>
+<h3 id="chromiums-quantum-resistance-efforts">Chromium&rsquo;s Quantum Resistance Efforts<a href="#chromiums-quantum-resistance-efforts" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h4 id="hybrid-approach">Hybrid Approach<a href="#hybrid-approach" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Chrome uses a hybrid post-quantum key exchange, combining traditional and quantum-resistant algorithms. This method, detailed in IETF draft-ietf-tls-hybrid-design [5], includes:</p>
+<ul>
+<li><strong>Key Exchange Implementation:</strong> Parallel use of X25519 (traditional) and Kyber-768 (post-quantum) key exchanges, with shared secrets combined using HKDF [6].</li>
+<li><strong>Performance Optimization:</strong> Google&rsquo;s analysis shows hybrid key exchanges add only about 0.2 milliseconds of latency per median connection [7].</li>
+</ul>
+<h4 id="certificate-processing">Certificate Processing<a href="#certificate-processing" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Chrome supports hybrid certificates as specified in draft-ietf-tls-hybrid-certificates [8]. Key enhancements include:</p>
+<ul>
+<li>Parallel validation paths for classical and quantum signatures</li>
+<li>Improved memory management for larger certificates</li>
+<li>Optimized chain processing to maintain performance</li>
+</ul>
+<h4 id="client-side-storage-security">Client-Side Storage Security<a href="#client-side-storage-security" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Chrome&rsquo;s storage security architecture features:</p>
+<ul>
+<li>Quantum-resistant key derivation functions</li>
+<li>Enhanced encryption for stored credentials</li>
+<li>Hybrid encryption protocols for secure synchronization</li>
+</ul>
+<h3 id="references">References<a href="#references" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>[1] Langley, A. (2016). &ldquo;Experimenting with Post-Quantum Cryptography.&rdquo; Google Security Blog. <a href="https://security.googleblog.com/2016/07/experimenting-with-post-quantum.html">https://security.googleblog.com/2016/07/experimenting-with-post-quantum.html</a></p>
+<p>[2] Proos, J., &amp; Zalka, C. (2003). &ldquo;Shor&rsquo;s discrete logarithm quantum algorithm for elliptic curves.&rdquo; Quantum Information &amp; Computation. <a href="https://doi.org/10.48550/arXiv.quant-ph/0301141">https://doi.org/10.48550/arXiv.quant-ph/0301141</a></p>
+<p>[3] Mosca, M. (2018). &ldquo;Cybersecurity in an era with quantum computers: Will we be ready?&rdquo; IEEE Security &amp; Privacy, 16(5), 38-41. <a href="https://doi.org/10.1109/MSP.2018.3761723">https://doi.org/10.1109/MSP.2018.3761723</a></p>
+<p>[4] Google Security Blog (2022). &ldquo;Chrome is now using post-quantum encryption.&rdquo; <a href="https://security.googleblog.com/2022/07/chrome-now-uses-post-quantum.html">https://security.googleblog.com/2022/07/chrome-now-uses-post-quantum.html</a></p>
+<p>[5] Stebila, D., &amp; Mosca, M. (2022). &ldquo;Hybrid key exchange in TLS 1.3.&rdquo; IETF Draft. <a href="https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-design/">https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-design/</a></p>
+<p>[6] Langley, A. (2022). &ldquo;Post-quantum cryptography in Chrome.&rdquo; Chromium Blog. <a href="https://blog.chromium.org/2022/07/post-quantum-cryptography-in-chrome.html">https://blog.chromium.org/2022/07/post-quantum-cryptography-in-chrome.html</a></p>
+<p>[7] Chrome Platform Status (2023). &ldquo;Post-Quantum Cryptography Implementation Report.&rdquo; <a href="https://chromestatus.com/feature/6678134168485888">https://chromestatus.com/feature/6678134168485888</a></p>
+<p>[8] IETF (2023). &ldquo;Hybrid certificates for TLS.&rdquo; Draft-ietf-tls-hybrid-certificates. <a href="https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-certificates/">https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-certificates/</a></p>
+<p>[9] Chromium Security Architecture Documentation (2023). <a href="https://www.chromium.org/Home/chromium-security/security-architecture/">https://www.chromium.org/Home/chromium-security/security-architecture/</a></p>
+<p>[10] Chromium Design Documents (2023). &ldquo;Post-Quantum Cryptography Implementation.&rdquo; <a href="https://www.chromium.org/developers/design-documents/">https://www.chromium.org/developers/design-documents/</a></p>
+<p>[11] NIST (2022). &ldquo;Post-Quantum Cryptography Standardization.&rdquo; <a href="https://csrc.nist.gov/Projects/post-quantum-cryptography/post-quantum-cryptography-standardization">https://csrc.nist.gov/Projects/post-quantum-cryptography/post-quantum-cryptography-standardization</a></p>
+<p>[12] Schwabe, P., et al. (2022). &ldquo;CRYSTALS-Kyber Algorithm Specification v3.02&rdquo; <a href="https://pq-crystals.org/kyber/data/kyber-specification-round3-20210804.pdf">https://pq-crystals.org/kyber/data/kyber-specification-round3-20210804.pdf</a></p>
+<p>[13] Cloudflare Research (2023). &ldquo;Experimenting with Post-Quantum Cryptography.&rdquo; <a href="https://research.cloudflare.com/post-quantum-cryptography/">https://research.cloudflare.com/post-quantum-cryptography/</a></p>
+<p>[14] Chen, L., et al. (2023). &ldquo;Report on Post-Quantum Cryptography.&rdquo; NIST Internal Report 8413. <a href="https://doi.org/10.6028/NIST.IR.8413">https://doi.org/10.6028/NIST.IR.8413</a></p>
+<p>[15] Alagic, G., et al. (2023). &ldquo;Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process.&rdquo; NIST Internal Report 8413-2023. <a href="https://doi.org/10.6028/NIST.IR.8413">https://doi.org/10.6028/NIST.IR.8413</a></p>
+
+      </div></div>
+
+  
+    
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
